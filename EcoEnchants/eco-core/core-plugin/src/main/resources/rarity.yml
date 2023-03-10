@@ -1,0 +1,56 @@
+# Table chance is the chance of getting enchantment as a percentage from an enchanting table
+# Minimum Level is the minimum xp level you have to be to get the enchantment
+# You can add more rarities by following the pattern.
+# Remember, enchantments are more likely to be high-level the closer they are to maximum-obtainable-level
+# Villager chance is the chance of a villager having this trade as a percentage. Vanilla default for all enchantments is 2.7%, however you can choose this per-rarity.
+# Loot chance is the chance of an item in a loot chest having this enchantment as a percentage
+
+rarities:
+  - id: common
+    display-name: "Common"
+    table-chance: 30
+    minimum-level: 1
+    villager-chance: 10.5
+    loot-chance: 12
+
+  - id: uncommon
+    display-name: "Uncommon"
+    table-chance: 20
+    minimum-level: 5
+    villager-chance: 9
+    loot-chance: 16
+
+  - id: rare
+    display-name: "Rare"
+    table-chance: 20
+    minimum-level: 15
+    villager-chance: 7.5
+    loot-chance: 18
+
+  - id: epic
+    display-name: "Epic"
+    table-chance: 10
+    minimum-level: 16
+    villager-chance: 6
+    loot-chance: 20
+
+  - id: legendary
+    display-name: "Legendary"
+    table-chance: 8
+    minimum-level: 20
+    villager-chance: 4.5
+    loot-chance: 15
+
+  - id: special
+    display-name: "Special"
+    table-chance: 2
+    minimum-level: 30
+    villager-chance: 3
+    loot-chance: 5
+
+  - id: veryspecial
+    display-name: "Very Special"
+    table-chance: 1
+    minimum-level: 30
+    villager-chance: 1.5
+    loot-chance: 2

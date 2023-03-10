@@ -1,0 +1,62 @@
+name: EcoItems
+version: ${projectVersion}
+main: com.willfp.ecoitems.EcoItemsPlugin
+api-version: 1.16
+authors: [ Auxilor ]
+website: willfp.com
+load: STARTUP
+depend:
+  - eco
+softdepend:
+  - EcoSkills
+  - EcoEnchants
+  - AureliumSkills
+  - mcMMO
+  - Jobs
+  - Vault
+  - TMMobcoins
+loadbefore:
+  - EcoArmor
+  - Talismans
+  - EcoBosses
+  - Reforges
+  - EcoCrates
+  - StatTrackers
+  - EcoPets
+
+commands:
+  ecoitems:
+    description: Base Command
+    permission: ecoitems.command.ecoitems
+
+permissions:
+  ecoitems.*:
+    description: All ecoitems permissions
+    default: op
+    children:
+      ecoitems.command.*: true
+  ecoitems.command.*:
+    description: All commands
+    default: op
+    children:
+      ecoitems.command.reload: true
+      ecoitems.command.ecoitems: true
+      ecoitems.command.give: true
+      ecoitems.command.import: true
+      ecoitems.command.export: true
+
+  ecoitems.command.reload:
+    description: Allows reloading the config
+    default: op
+  ecoitems.command.give:
+    description: Allows the use of /ecoitems give
+    default: op
+  ecoitems.command.import:
+    description: Allows the use of /ecoitems import
+    default: op
+  ecoitems.command.export:
+    description: Allows the use of /ecoitems export
+    default: op
+  ecoitems.command.ecoitems:
+    description: Allows the user of /ecoitems.
+    default: true

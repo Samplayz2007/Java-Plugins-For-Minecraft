@@ -1,0 +1,85 @@
+#
+# eco
+# by Auxilor
+# Default config (With Comments) can be found here: https://github.com/Auxilor/eco/blob/master/eco-core/core-plugin/src/main/resources/config.yml
+#
+
+# How player/server data is saved:
+# yaml - Stored in data.yml: Good option for single-node servers (i.e. no BungeeCord/Velocity)
+# mongo - If you're running on a network (Bungee/Velocity), you should use MongoDB if you can.
+# mysql - The alternative to MongoDB. Because of how eco data works, MongoDB is the best option; but use this if you can't.
+data-handler: yaml
+
+# If data should be migrated automatically when changing data handler.
+perform-data-migration: true
+
+mongodb:
+  # The full MongoDB connection URL.
+  url: ""
+
+mysql:
+  # How many threads to execute statements on. Higher numbers can be faster however
+  # very high numbers can cause issues with OS configuration. If writes are taking
+  # too long, increase this value.
+  threads: 2
+  # The maximum number of MySQL connections.
+  connections: 10
+  host: localhost
+  port: 3306
+  database: database
+  user: username
+  password: passy
+
+# How many ticks to wait between committing data to a database. This doesn't
+# affect yaml storage, only MySQL and MongoDB. By default, data is committed
+# every tick, but you can increase this to be every x ticks, for example 20
+# would be committing once a second.
+save-interval: 1
+
+# Options to manage the conflict finder
+conflicts:
+  whitelist: # Plugins that should never be marked as conflicts
+    - eco
+
+# DropQueue by default uses a faster collated queue system where all drops
+# that originate from the same player on the same tick are dropped together.
+# Disable it if it changes drop mechanics too much for you.
+use-fast-collated-drops: true
+
+# Some plugins use their own item display systems (eg Triton)
+# And must be run after eco. Don't enable this unless you run a conflicting plugin
+# and have been told to enable it.
+use-lower-protocollib-priority: false
+
+# Display frames massively optimize PacketWindowItems, however some users have
+# reported display bugs by using it. If you have any problems with it, then you
+# should disable this option.
+use-display-frame: true
+
+# Time to live for a display frame. In other words, this is how frequent (in ticks)
+# that display frames will be cleared / deleted.
+display-frame-ttl: 17
+
+# The default bukkit NamespacedKey creation can cause decent amounts of lag under
+# load due to the use of regex validation in the constructor. eco has its own system
+# to create NamespacedKeys, however it can be unsafe as it skips most validation checks.
+# If you encounter any bugs with this, then enable this option - however it will come
+# at a performance penalty.
+use-safer-namespacedkey-creation: false
+
+# If the stack traces of extensions that failed to load should be logged. Disabled by
+# default to prevent users from reporting bugs. Enable if you're a developer.
+log-full-extension-errors: false
+
+# To make the custom crafting system work better for players, players are also sent an
+# additional recipe containing the displayed items as ingredients. However, with a large
+# number of recipes, this can create PacketTooLargeExceptions. If you have this exception,
+# disable this option. Bear in mind that this means the auto-craft preview will fail to
+# render items nicely, which may degrade the user experience on your server. If you use
+# a custom crafting table, though, this won't affect anything, and you should disable the option.
+displayed-recipes: true
+
+# If eco plugins should not check for updates; only enable this if you know what you're doing
+# as there can be urgent hotfixes that you are then not notified about. If you're confident
+# that you can manage updates on your own, turn this on.
+no-update-checker: false
