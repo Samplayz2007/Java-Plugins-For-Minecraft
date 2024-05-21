@@ -1,28 +1,7 @@
 # eco
 eco is a powerful Spigot plugin framework that simplifies the process of plugin creation and supercharges
 your plugins.
-It's the engine behind [EcoEnchants](https://polymart.org/resource/490), [Reforges](https://polymart.org/resource/1330),
-[EcoItems](https://polymart.org/resource/1247), [EcoSkills](https://polymart.org/resource/1351),
-[EcoArmor](https://polymart.org/resource/687), [Talismans](https://polymart.org/resource/611),
-and many more.
-
-<p>
-    <a href="https://github.com/Auxilor/eco/releases">
-        <img alt="spigot" src="https://img.shields.io/github/v/release/Auxilor/eco?color=informational"/>
-    </a>
-    <a href="https://bstats.org/plugin/bukkit/EcoEnchants" alt="bstats servers">
-        <img src="https://img.shields.io/bstats/servers/7666?color=informational"/>
-    </a>
-    <a href="https://bstats.org/plugin/bukkit/EcoEnchants" alt="bstats players">
-        <img src="https://img.shields.io/bstats/players/7666?color=informational"/>
-    </a>
-    <a href="https://discord.gg/ZcwpSsE/" alt="Discord">
-        <img src="https://img.shields.io/discord/452518336627081236?label=discord&color=informational"/>
-    </a>
-    <a href="https://github.com/Auxilor/eco/actions/workflows/java-ci.yml" alt="Latest Dev Build">
-        <img src="https://img.shields.io/github/actions/workflow/status/Auxilor/eco/java-ci.yml?branch=develop&color=informational"/>
-    </a>
-</p>
+It's the engine behind all the custom plugins on server
 
 eco comes packed with all the tools you need in your plugins:
 
